@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   def index
-    @questios = Question.all
+    @questions = Question.all
+    @question = Question.new
   end
 
   def show
@@ -11,9 +12,10 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.new(question_params)
-    if question.save
-      redirect_to root_path, notice:'Success!'
+    @questions = Question.all
+    @question = Question.new(question_params)
+    if @question.save
+
     else
       flash[:alert] = 'Save error!'
       render :new
