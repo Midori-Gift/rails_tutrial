@@ -1,13 +1,19 @@
-<div class="follower">
-  <%= link_to followers_user_path(@user.id) do %>
-    <h5 style= "color: black;">フォロワー<%= @user.followers.count %></h5>
-  <% end %>
+<!--フォローフォロワー数の部分テンプレート.js-->
+  <div class="follower">
+    <div id="follower_count">
+    <%= link_to followers_user_path(@user.id) do %>
+      <h5 style= "color: black;">フォロワー<%= @user.followers.count %></h5>
+    <% end %>
+  </div>
 </div>
-<div class="follwing">
-  <%= link_to following_user_path(@user.id) do %>
-    <h5 style="color: black;">フォロー<%= @user.following.count %></h5>
-  <% end %>
+  <div class="follwing">
+    <div id="follow_count">
+    <%= link_to following_user_path(@user.id) do %>
+      <h5 style="color: black;">フォロー<%= @user.following.count %></h5>
+    <% end %>
+  </div>
 </div>
+<!--ここまで-->
 <div>
-  <%= render "follow_form" %>
+  <%= render "users/follow_form" %>
 </div>
