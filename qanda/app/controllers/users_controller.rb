@@ -7,12 +7,12 @@ class UsersController < ApplicationController
   def following
     @user = User.find(params[:id])
     @users = @user.following
-    render 'following'
+    render 'users/following'
   end
 
   def followers
     @user = User.find(params[:id])
     @users = @user.followers
-    render 'followers'
+    render 'users/followers'
   end
 end
